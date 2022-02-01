@@ -15,6 +15,9 @@ public class BasicNavigations {
         //2- create instance of the Selenium web driver
         //this opens a blank page
         WebDriver driver = new ChromeDriver();
+        //introduce driver from this line
+
+        driver.manage().window().maximize();//maximize the browser size
 
         //3- got to "https://www.tesla.com"
         driver.get("https://www.tesla.com");
@@ -61,7 +64,14 @@ System.out.println("currentTitle = " + currentTitle);
         String currentURL = driver.getCurrentUrl();
         System.out.println("currentURL = " + currentURL);
 
+        //this closes the currently opened window
+        driver.close();
 
+
+        //closes all windows of browser
+        driver.quit();
+        //after .quit() you cannot execute any more lines of code
+       // we get NoSuchSessionException
     }
 
 }
