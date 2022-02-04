@@ -21,7 +21,7 @@ public class T1_CydeoVerification {
         String expectedURL = "cydeo";
         String actualURL = driver.getCurrentUrl();
 
-        if (actualURL.contains(expectedURL)) {
+        if (actualURL.contains(expectedURL)) {//check if the actual title even contain expected
             System.out.println("This URL contains the specified word, test passed");
         } else {
             System.out.println("This URL does not have the specified word, test failed");
