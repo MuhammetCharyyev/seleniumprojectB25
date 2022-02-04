@@ -37,7 +37,7 @@ public class T1_CydeoVerification {
             System.out.println("The title is not matched, test failed");
         }
 
-        driver.close();//close window after execution
+       // driver.close();//close window after execution
 
 
     }
