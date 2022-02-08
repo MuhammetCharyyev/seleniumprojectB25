@@ -7,6 +7,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
 
+//creating Utility method to call Chrome or Firefox driver
+    //instead of  WebDriverManager.chromedriver().setup() ->
+    // WebDriver driver = new ChromeDriver() we may use this method 'getDriver"
+    // WebDriver driver = WebDriverFactory.getDriver("chrome");
 
     public static WebDriver getDriver (String browserType){
         if(browserType.equalsIgnoreCase("chrome")){
@@ -19,6 +23,11 @@ public class WebDriverFactory {
             System.out.println("Given browser does not exist/or currently not supported");
         return null;
     }
+    }
+
+    public static void main(String[] args) {
+        getDriver("wll");
+
     }
 
 }
