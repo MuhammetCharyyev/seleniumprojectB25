@@ -18,12 +18,19 @@ public class T4_cssSelector_GetText {
 
 //3- Verify “Reset password” button text is as expected:
 //Expected: Reset password
-       // onclick="BX.addClass(this, 'wait');
+
+        //syntax-> tagName[attribute='value']
+        // input[class='login-btn']
+        //using cssSelector
+        //cssSelector allows you to find exactly what we want without indication attributes
+       // button[value='Reset password']);
         WebElement resetPassword = driver.findElement(By.cssSelector("button[value='Reset password']"));
 
         String expectedResetText = "Reset password";
         String actualResetText = resetPassword.getAttribute("value");
         //signInButton.getAttribute ->because "Reset password" text is inside the attribute 'value'
+        //or we can simply getText "Reset password" which is inside the <button> tag->
+        // ->String actualResetText = resetPassword.getText();
 
         System.out.println("actualResetText = " + actualResetText);
         //printed out -> actualButtonText = Log In
