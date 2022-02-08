@@ -13,41 +13,51 @@ public class T2_GetText_GetAttribute {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         //getting from method we created in Utility package
         driver.manage().window().maximize();
+
         //2- Go to: https://login1.nextbasecrm.com/
         driver.get("https://login1.nextbasecrm.com");
 
-        //3- Enter incorrect username: “incorrect”
-        WebElement inputUserName = driver.findElement(By.className("login-inp"));
-        //find element by class name, the 1st matching one
-        inputUserName.sendKeys("incorrect");
-        //then by sendKeys we put cursor on selected place and it will put our String
+//        3- Verify “remember me” label text is as expected:
+//        Expected: Remember me on this computer
+        WebElement rememberMeLabel = driver.findElement(By.className("login-item-checkbox-label"));
 
-        //4- Enter incorrect password: “incorrect”
-        WebElement inputPassword = driver.findElement(By.name("USER_PASSWORD"));
-        //find element by name, the 1st matching one
-        inputPassword.sendKeys("incorrect");
-        //then by sendKeys we put cursor on selected place and it will put our String
-
-        //5- Click to log in button.
-        WebElement clickLogButton = driver.findElement(By.className("login-btn"));
-        //find element by class name, the 1st matching one
-        clickLogButton.click();
-        //clicking the found link
-
-        // //6- Verify error message text is as expected:
-        //        //Expected: Incorrect login or password
-        WebElement errorMessage = driver.findElement(By.className("errortext"));
-        //find element by class name, the 1st matching one
-
-        String expectedErrMess = "Incorrect login or password";
-        String actualErrMess = errorMessage.getText();
-        //errorMessage.getText() will return the WebElement to String
-
-        if (actualErrMess.equals(expectedErrMess)) {
-            System.out.println("error message verification PASSED");
-        } else {
-            System.err.println("error message verification FAILED!");
+        String expectedRememberMeLabel = "Remember me on this computer";
+        String actualRememberMeLabel = rememberMeLabel.getText();
+//rememberMeLabel.getText() will return the WebElement to String
+        if (actualRememberMeLabel.equals(expectedRememberMeLabel)){
+            System.out.println("label verification passed");
+        }else{
+            System.out.println("label verification failed");
         }
+
+        //4- Verify “forgot password” link text is as expected:
+        //Expected: Forgot your password?
+        WebElement forgotPassword = driver.findElement(By.className("login-link-forgot-pass"));
+        String expectedForgotPasswordText = "FORGOT YOUR PASSWORD?";
+        String actualForgotPasswordText = forgotPassword.getText();
+
+        if( actualForgotPasswordText.equals(expectedForgotPasswordText)){
+            System.out.println("Forgot password verification passed");
+        }else{
+            System.out.println("expectedForgotPasswordText = " + expectedForgotPasswordText);
+            System.out.println("actualForgotPasswordText = " + actualForgotPasswordText);
+            System.out.println("Forgot password verification failed");
+        }
+
+//5- Verify “forgot password” href attribute’s value contains expected:
+//Expected: forgot_password=yes
+        String expectedInHref = "forgot_password=yes";
+        String actualInHref = forgotPassword.getAttribute("href");
+        //actual refers to a HREF attribute of forgotPassword message
+
+        System.out.println("actualInHref = " + actualInHref);
+
+        if(actualInHref.contains(expectedInHref)){
+            System.out.println("HREF passed");
+        }else{
+            System.out.println("HREF failed");
+        }
+driver.quit();
 
     }
 }
