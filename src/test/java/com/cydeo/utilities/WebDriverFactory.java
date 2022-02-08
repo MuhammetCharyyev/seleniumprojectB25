@@ -25,11 +25,6 @@ public class WebDriverFactory {
     }
     }
 
-    public static void main(String[] args) {
-        getDriver("wll");
-
-    }
-
 }
 /*
 // TASK: NEW METHOD CREATION
