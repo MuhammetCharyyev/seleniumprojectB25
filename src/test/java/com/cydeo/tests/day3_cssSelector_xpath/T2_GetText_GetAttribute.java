@@ -57,7 +57,7 @@ public class T2_GetText_GetAttribute {
         }else{
             System.out.println("HREF failed");
         }
-driver.quit();
+//driver.quit();
 
     }
 }
