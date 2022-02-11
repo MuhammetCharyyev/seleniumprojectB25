@@ -1,7 +1,9 @@
 package com.cydeo.tests.day4_findElements_checkboxes_radio;
 
 import com.cydeo.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class T1_Xpath_cssSelector_Practice {
 
@@ -14,7 +16,41 @@ public class T1_Xpath_cssSelector_Practice {
         //2. Go to https://practice.cydeo.com/forgot_password
         driver.get("https://practice.cydeo.com/forgot_password");
 
+// 3. Locate all the WebElements on the page using XPATH and/or CSS
+//  locator only (total of 6)
+// a. “Home” link //locate homeLink using cssSelector
+        // locate homeLink using css by class, syntax1 ->a[class='nav-link']
+        WebElement homeLink_ex1  = driver.findElement(By.cssSelector("a[class='nav-link']"));
+ // locate homeLink using css by class, syntax2 -> a.nav-link ( . -> indicates class only
+        WebElement homeLink_ex2  = driver.findElement(By.cssSelector("a.nav-link"));
+        //locate homeLink using css by href value
+        WebElement homeLink_ex3 = driver.findElement(By.cssSelector("a[href='/']"));
 
+//b. “Forgot password” header
+        //locate header using css, locate parent element and move down to h2
+// one approach, syntax1
+        WebElement header_ex1 = driver.findElement(By.cssSelector("div.example>h2"));
+
+//locate header using xpath, everytime starting with double slash //.
+        //for 'text' you dont have to put @ inside []
+        WebElement header_ex2 = driver.findElement(By.xpath("//h2[text()='Forgot Password']"));
+        //second approach to indicate dot "." instead of text()
+       // WebElement header_ex3 = driver.findElement(By.cssSelector("//h2[.='Forgot Password']"));
+
+//  c. “E-mail” text
+
+        WebElement emailLabel = driver.findElement(By.xpath("//label[@for='email']"));
+
+//   d. E-mail input box
+
+        WebElement inputBox_ex1 = driver.findElement(By.xpath("//input[@name='email']"));
+
+//locate inputbox using xpath contains method, checking something contains of
+        //tagName[contains(@attribute,'value')]
+        WebElement inputBox_ex2 = driver.findElement(By.xpath("//input[contains(@pattern, 'a-z')]"));
+
+//  e. “Retrieve password” button
+//  f. “Powered by Cydeo text
 
 
     }
