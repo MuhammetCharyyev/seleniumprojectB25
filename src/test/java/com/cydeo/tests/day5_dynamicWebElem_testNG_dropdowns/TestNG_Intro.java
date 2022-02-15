@@ -1,5 +1,6 @@
 package com.cydeo.tests.day5_dynamicWebElem_testNG_dropdowns;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class TestNG_Intro {
@@ -30,11 +31,29 @@ public class TestNG_Intro {
     // priority make execution in line
     public void test1(){
         System.out.println("test1 is running");
+
+        //Assert Equals: compare 2 of the same things
+        String actual = "apple";
+        String expected = "apple2";
+
+        Assert.assertEquals(actual, expected);
+        //java.lang.AssertionError:
+        //Expected :apple2
+        //Actual   :apple
     }
+
+
 
     @Test (priority = 2) //define the priority to execute
     public void test2(){
         System.out.println("test2 is running");
+
+        String actual = "apple";
+        String expected = "apple1";
+
+        Assert.assertTrue(actual.equals(expected));//java.lang.AssertionError:
+                                                   // Expected :true
+                                                   //Actual   :false
     }
 
 }
