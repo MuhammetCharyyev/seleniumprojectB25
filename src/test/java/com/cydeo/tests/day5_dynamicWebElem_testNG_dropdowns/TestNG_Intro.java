@@ -34,7 +34,7 @@ public class TestNG_Intro {
 
         //Assert Equals: compare 2 of the same things
         String actual = "apple";
-        String expected = "apple2";
+        String expected = "apple";
 
         Assert.assertEquals(actual, expected);
         //java.lang.AssertionError:
@@ -49,7 +49,7 @@ public class TestNG_Intro {
         System.out.println("test2 is running");
 
         String actual = "apple";
-        String expected = "apple1";
+        String expected = "apple";
 
         Assert.assertTrue(actual.equals(expected));//java.lang.AssertionError:
                                                    // Expected :true
