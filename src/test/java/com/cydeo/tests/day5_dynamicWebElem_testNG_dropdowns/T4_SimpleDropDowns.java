@@ -56,6 +56,7 @@ public class T4_SimpleDropDowns {
         String actualStateDropdownText = stateDropdown.getFirstSelectedOption().getText();
         //helps us to determine the text of first selected option and compare with expected
 
+        //check if it is displayed what is expected
         Assert.assertEquals(actualStateDropdownText, expectedStateDropdownText);
 
     }
