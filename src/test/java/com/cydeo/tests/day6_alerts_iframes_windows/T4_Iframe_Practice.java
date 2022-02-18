@@ -32,7 +32,13 @@ public class T4_Iframe_Practice {
 
         //we need to switch driver's focus to Iframe with text “Your content goes here.”
 //option1 - switching using id attribute value
-        driver.switchTo().frame("mce_0_ifr");
+      //  driver.switchTo().frame("mce_0_ifr");
+
+        //option2 - passing index number of iframe, if it is not only one Iframe on page
+       // driver.switchTo().frame(0);
+
+        //option3 - locate as web element and pass in frame() method
+        driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='mce_0_ifr']")));
 
         //locate paragraph tag
         WebElement yourContentGoesHereText = driver.findElement(By.xpath("//p"));
