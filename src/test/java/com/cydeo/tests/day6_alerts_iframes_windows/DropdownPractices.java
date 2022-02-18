@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -50,11 +49,43 @@ public class DropdownPractices {
         Assert.assertEquals(actualOptionText, expectedOptionText);
     }
 
-    @AfterMethod
+    @Test
+    public void dropdowns_task6(){
 
-    public void closeDriver(){
-        driver.close();
+        //Select “December 1 , 1923” and verify it is selected.
+        Select yearDropdown = new Select(driver.findElement(By.xpath("//select[@id='year']")));
+        Select monthDropdown = new Select(driver.findElement(By.xpath("//select[@id='month']")));
+        Select dayDropdown = new Select(driver.findElement(By.xpath("//select[@id='day']")));
+
+        //Select year using : visible text
+        yearDropdown.selectByVisibleText("1923");
+        //Select month using : value attribute
+        monthDropdown.selectByValue("11");
+        //Select day using : index number
+        dayDropdown.selectByIndex(0);
+//create expected result
+        String expectedYear = "1923";
+        String expectedMonth = "December";
+        String expectedDay = "1";
+
+        //getting actual result from browser
+
+        String actualYear = yearDropdown.getFirstSelectedOption().getText();
+        String actualMonth = monthDropdown.getFirstSelectedOption().getText();
+        String actualDay = dayDropdown.getFirstSelectedOption().getText();
+
+        Assert.assertEquals(actualYear, expectedYear);
+        Assert.assertEquals(actualMonth, expectedMonth);
+        Assert.assertEquals(actualDay, expectedDay);
+
     }
+
+
+//    @AfterMethod
+//
+//    public void closeDriver(){
+//        driver.close();
+//    }
 
 }
 /*
@@ -67,3 +98,4 @@ TC #5: Selecting state from State dropdown and verifying result
 6. Verify final selected option is California.
 Use all Select options. (visible text, value, index)
  */
+
