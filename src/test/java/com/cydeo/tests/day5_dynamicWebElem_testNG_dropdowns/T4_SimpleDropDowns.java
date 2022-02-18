@@ -36,7 +36,7 @@ public class T4_SimpleDropDowns {
         // * Expected: “Please select an option”
 
         Select simpleDropdown = new Select(driver.findElement(By.xpath("//select[@id='dropdown']")));
-        //using the Select class os Selenium we create the object which helps
+        //using the 'Select' class of Selenium we create the object which helps
         // us to select the found element
 
         WebElement currentlySelectedOption = simpleDropdown.getFirstSelectedOption();
