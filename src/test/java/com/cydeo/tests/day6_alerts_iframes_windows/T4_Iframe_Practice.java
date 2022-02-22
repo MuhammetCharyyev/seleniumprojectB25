@@ -52,7 +52,8 @@ public class T4_Iframe_Practice {
 //Assert: “An iFrame containing the TinyMCE WYSIWYG Editor”
         //to be able to verify the header we must switch back to main HTML
 
-        driver.switchTo().parentFrame(); //return to main HTML
+        driver.switchTo().parentFrame(); //return to HTML (#1) which ever is one in root
+        //or  driver.switchTo().defaultContent(); -> return to the main initial HTML
 
         WebElement headerText = driver.findElement(By.xpath("//h3"));
 
