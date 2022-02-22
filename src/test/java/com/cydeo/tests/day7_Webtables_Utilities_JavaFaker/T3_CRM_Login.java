@@ -64,13 +64,14 @@ public class T3_CRM_Login {
         driver.get("https://login1.nextbasecrm.com/");
 
         CRM_Utilities.srm_login(driver,
-                "helpdesk1@cybertekschool.com", "UserUser");
+                "helpdesk2@cybertekschool.com", "UserUser");
         //called from CRM_Utilities class we created for login
+//this is second option with indication username and password in arguments along with driver
 
 //        6. Verify title is as expected:
 //        Expected: Portal
 
-        BrowserUtils.verifyTitle(driver, "Portal");
+        BrowserUtils.verifyTitle(driver, "(2) Portal");
 
     }
 
