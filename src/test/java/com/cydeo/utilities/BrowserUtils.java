@@ -23,19 +23,15 @@ public class BrowserUtils {
         } catch (InterruptedException e) {
         }
     }
-    /*
-    1. Create a new class called BrowserUtils
-    2. Create a method to make Task1 logic re-usable
-    3. When method is called, it should switch window and verify title.
 
-
-    Method info:
-    • Name: switchWindowAndVerify
-    • Return type: void
-    • Arg1: WebDriver
-    • Arg2: String expectedInUrl
-    • Arg3: String expectedTitle
+     /*
+    This method accepts 3 arguments.
+    Arg1: webdriver
+    Arg2: expectedInUrl : for verify if the url contains given String.
+        - If condition matches, will break loop.
+    Arg3: expectedInTitle to be compared against actualTitle
      */
+
     public static void switchWindowAndVerify (WebDriver driver, String expectedInURL, String expectedTitle){
 
         Set<String> allWindowsHandles = driver.getWindowHandles();
@@ -57,6 +53,9 @@ public class BrowserUtils {
 
     }
 
+    /*
+ This method accepts a String "expectedTitle" and Asserts if it is true
+  */
     public static void verifyTitle (WebDriver driver, String expectedTitle){
 
         Assert.assertEquals(driver.getTitle(), expectedTitle);
@@ -67,4 +66,16 @@ public class BrowserUtils {
 
 }
 
+  /*
+    1. Create a new class called BrowserUtils
+    2. Create a method to make Task1 logic re-usable
+    3. When method is called, it should switch window and verify title.
 
+
+    Method info:
+    • Name: switchWindowAndVerify
+    • Return type: void
+    • Arg1: WebDriver
+    • Arg2: String expectedInUrl
+    • Arg3: String expectedTitle
+     */
