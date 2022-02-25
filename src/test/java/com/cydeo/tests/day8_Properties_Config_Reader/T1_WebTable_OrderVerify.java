@@ -57,6 +57,18 @@ public class T1_WebTable_OrderVerify {
 
     }
 
+
+
+    @Test
+    public void order_name_verify_test2() {//let's try with WebTableUtils methods
+        //getting method from created WebTableUtils for testing the table and get a date
+        String customerOrderTable1 = WebTableUtils.returnOrderDate (driver, "Alexandra Gray");
+        System.out.println("customerOrderTable1 = " + customerOrderTable1);
+
+        String costumerOrderDate2 = WebTableUtils.returnOrderDate(driver, "John Doe");
+        System.out.println("costumerOrderDate2 = " + costumerOrderDate2);
+    }
+
     @Test
     public void order_name_verify_test3() {//let's try with WebTableUtils methods
         //getting method from created WebTableUtils.orderVerify
@@ -64,13 +76,6 @@ public class T1_WebTable_OrderVerify {
         WebTableUtils.orderVerify(driver, "Bart Fisher", "01/16/2021");
 
 
-    }
-
-    @Test
-    public void order_name_verify_test2() {//let's try with WebTableUtils methods
-        //getting method from created WebTableUtils for testing the table and get a date
-        String customerOrderTable1 = WebTableUtils.returnOrderDate (driver, "Alexandra Gray");
-        System.out.println("customerOrderTable1 = " + customerOrderTable1);
     }
 
 }
