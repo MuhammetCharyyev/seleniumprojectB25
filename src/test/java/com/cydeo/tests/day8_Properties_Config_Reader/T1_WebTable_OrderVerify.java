@@ -1,6 +1,7 @@
 package com.cydeo.tests.day8_Properties_Config_Reader;
 
 import com.cydeo.utilities.WebDriverFactory;
+import com.cydeo.utilities.WebTableUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,6 +24,22 @@ public class T1_WebTable_OrderVerify {
     }
 
     @Test
+    public void order_name_verify_test3() {//let's try with WebTableUtils methods
+        //getting method from created WebTableUtils.orderVerify
+        // for testing the table and verify correct date
+        WebTableUtils.orderVerify(driver, "Bart Fisher", "01/16/2021");
+
+
+    }
+
+    @Test
+    public void order_name_verify_test2() {//let's try with WebTableUtils methods
+        //getting method from created WebTableUtils for testing the table and get a date
+        String customerOrderTable1 = WebTableUtils.returnOrderDate (driver, "Alexandra Gray");
+        System.out.println("customerOrderTable1 = " + customerOrderTable1);
+    }
+
+    @Test
     public void order_name_verify_test() {
 
 //  Go to https://practice.cydeo.com/web-tables
@@ -33,6 +50,7 @@ public class T1_WebTable_OrderVerify {
 
         WebElement nameBobVerify =
                 driver.findElement(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//td[.='Bob Martin']"));
+// or you may make it shorter ->//td[.='Bob Martin']
 
         System.out.println("nameBobVerify.getText() = " + nameBobVerify.getText());
         String expectedBobName = "Bob Martin";
@@ -49,6 +67,8 @@ public class T1_WebTable_OrderVerify {
         String actualDate = orderDateVerify.getText();
 
         Assert.assertEquals(actualDate, expectedDate, "wrong date");
+
+
 
     }
 
