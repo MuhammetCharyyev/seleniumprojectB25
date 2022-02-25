@@ -19,7 +19,8 @@ public class ReadingProperties {
 
         //3. load the properties object using FileInputStream object
 
-        properties.load(file);// 'load' is exception like FileInputStream, 'load' is a parent class
+        properties.load(file);// 'load' is exception like FileInputStream,
+        // 'load' is a parent class, throw it as exception
 //loading the properties of the "configuration.properties" file
 
         //4. use "properties" object to read value
