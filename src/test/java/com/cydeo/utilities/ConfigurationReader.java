@@ -32,7 +32,7 @@ public class ConfigurationReader {
 
     }
 
-    private static String getProperty(String keyword){
+   public static String getProperty(String keyword){
         //whenever calling this method it will come to the file configuration.properties with
         //calling of all properties over there and all the code logic above
         return properties.getProperty(keyword);
