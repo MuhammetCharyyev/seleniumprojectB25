@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class SingletonPractice {
 
 
-    @Test
+    @Test (priority = 2)//will execute as 2nd of priority
     public void singleton_understand_test1() {
 
         String str1 = Singleton.getWord(); //called method from Singleton class
@@ -25,10 +25,10 @@ public class SingletonPractice {
 
     }
 
-    @Test (priority = 2) //make it second place of priority
+    @Test (priority = 1) //make it first place of priority
     public void singleton_understand_test2() {
         String str4 = Singleton.getWord(); //called method from Singleton class
         System.out.println("str4 = " + str4);
-        //if you push only this test then it will print message when word==null
+//if you put on 1st place of priority this test then it will print message when word==null
     }
 }
