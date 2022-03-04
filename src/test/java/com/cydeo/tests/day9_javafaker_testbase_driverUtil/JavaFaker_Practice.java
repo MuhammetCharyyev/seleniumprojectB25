@@ -3,12 +3,15 @@ package com.cydeo.tests.day9_javafaker_testbase_driverUtil;
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 
+import java.util.Locale;
+
 public class JavaFaker_Practice {
 //JavaFaker is using for generating a lot of fake info to show in tests
     @Test
     public void test1() {
         //creating faker object to reach method
-        Faker faker = new Faker();
+        Faker faker = new Faker(new Locale("en"));
+        //you can indicate language and country with 'new Locale'
         System.out.println("faker.name().firstName() = " + faker.name().firstName());
         //printed random first name -> faker.name().firstName() = Merlin
         System.out.println("faker.name().lastName() = " + faker.name().lastName());
