@@ -64,7 +64,7 @@ public class Driver {
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             }
         }
-        return driver;//if not null then return with 'driver'
+        return driver;//if not null then return with current 'driver'
     }
 
 }
