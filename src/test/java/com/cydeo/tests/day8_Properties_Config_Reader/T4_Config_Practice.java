@@ -34,7 +34,8 @@ public class T4_Config_Practice {
     public void google_search_test() {
 // * 3- Write “apple” in search box
         WebElement googleSearchBox = driver.findElement(By.xpath("//input[@name='q']"));
-        googleSearchBox.sendKeys("apple"+ Keys.ENTER);
+        googleSearchBox.sendKeys//searchValue is called from config properties
+                (ConfigurationReader.getProperty("searchValue")+ Keys.ENTER);
 
 // * 4- Verify title:
 // * Expected: apple - Google Search
