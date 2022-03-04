@@ -16,6 +16,7 @@ public class ConfigurationReader {
             //2. we need to open the file in Java memory; FileInputStream
             FileInputStream file = new FileInputStream("configuration.properties");
             //get the name in "configuration.properties" and put in parentheses
+
 //3. load the properties object using FileInputStream object
             properties.load(file);
             // 'load' is exception like FileInputStream, 'load' is a parent class
