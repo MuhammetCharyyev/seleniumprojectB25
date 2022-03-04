@@ -12,16 +12,19 @@ public class JavaFaker_Practice {
         //creating faker object to reach method
         Faker faker = new Faker(new Locale("en"));
         //you can indicate language and country with 'new Locale'
+
         System.out.println("faker.name().firstName() = " + faker.name().firstName());
         //printed random first name -> faker.name().firstName() = Merlin
+
         System.out.println("faker.name().lastName() = " + faker.name().lastName());
         //printed random last name ->faker.name().lastName() = Howell
+
         System.out.println("faker.name().fullName() = " + faker.name().fullName());
         //printed random full name ->faker.name().fullName() = Roxann Strosin DDS
 
         System.out.println("faker.numerify(\"###-###-####\") = "
                 + faker.numerify("###-###-####"));
-//generate fake phone number ->faker.numerify("###-###-####") = 839-333-1932
+//generate fake phone number or set of numbers ->faker.numerify("###-###-####") = 839-333-1932
 
         System.out.println("faker.letterify(\"???-????\") = "
                 + faker.letterify("???-????"));
