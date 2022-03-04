@@ -40,9 +40,9 @@ public class T4_Config_Practice {
 // * 4- Verify title:
 // * Expected: apple - Google Search
 
-        String expectedTitle = ConfigurationReader.getProperty("searchValue")+" - Google Search";
+        String expectedTitle = ConfigurationReader.getProperty("searchValue")+ " - Google Search";
         //we add here config properties option to have possibility
-        // to change value for searchValue in out config.prop file
+        // to change easily 'value' for searchValue in our config.prop file
         String actualTitle = driver.getTitle();
 
         Assert.assertEquals(actualTitle, expectedTitle);
