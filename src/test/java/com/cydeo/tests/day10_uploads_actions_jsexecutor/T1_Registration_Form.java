@@ -99,9 +99,11 @@ public class T1_Registration_Form {
         signUp.click();
 
 // * 15. Verify success message “You’ve successfully completed registration.” is displayed.
-        System.out.println("Driver.getDriver().getTitle() = " + Driver.getDriver().getTitle());
+        System.out.println("Driver.getDriver().getTitle() = "
+                            + Driver.getDriver().getTitle());
 
-        System.out.println("Driver.getDriver().getCurrentUrl() = " + Driver.getDriver().getCurrentUrl());
+        System.out.println("Driver.getDriver().getCurrentUrl() = "
+                            + Driver.getDriver().getCurrentUrl());
 
 
 
