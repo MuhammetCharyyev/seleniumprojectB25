@@ -15,6 +15,7 @@ public class T2_Upload_Practice {
 
 //2. Find some small file from your computer, and get the path of it.
         //simulate this example, create a String to identify file path what we want to upload
+        //file->right click->properties->security->object
         String path = "C:\\Users\\mukha\\OneDrive\\Рабочий стол\\Cybertek\\HTML Class\\Day1\\turkmenistan-flag.jpg";
         WebElement fileUpload = Driver.getDriver().findElement(By.id("file-upload"));
         fileUpload.sendKeys(path);
