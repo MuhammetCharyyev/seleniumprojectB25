@@ -82,9 +82,26 @@ public class T1_Registration_Form {
         //you may indicate limit by 'numberBetween(1,9)' if you know how many indexes
 
         // * 12. Select Job Title
+        Select jobTitle = new Select(Driver.getDriver().findElement
+                           (By.xpath("//select[@name='job_title']")));
+        jobTitle.selectByIndex(faker.number().numberBetween(1,9));
+        //'selectByIndex' way to select any directory by index number in a dropdown
+        //you may indicate limit by 'numberBetween(1,9)' if you know how many indexes   //
+
         // * 13. Select programming language from checkboxes
+        WebElement language = Driver.getDriver().findElement
+                              (By.xpath("//input[@class='form-check-input']"));
+        language.click();
+
         // * 14. Click to sign up button
+        WebElement signUp = Driver.getDriver().findElement
+                            (By.xpath("//button[@id='wooden_spoon']"));
+        signUp.click();
+
 // * 15. Verify success message “You’ve successfully completed registration.” is displayed.
+        System.out.println("Driver.getDriver().getTitle() = " + Driver.getDriver().getTitle());
+
+        System.out.println("Driver.getDriver().getCurrentUrl() = " + Driver.getDriver().getCurrentUrl());
 
 
 
