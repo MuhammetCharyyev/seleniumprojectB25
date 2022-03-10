@@ -1,4 +1,4 @@
-package com.cydeo.tests.day11_actions_jsexecutor_practice;
+package com.cydeo.tests.day10_uploads_actions_jsexecutor;
 
 import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
