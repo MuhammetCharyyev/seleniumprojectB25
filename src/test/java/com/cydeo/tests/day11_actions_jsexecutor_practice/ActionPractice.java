@@ -38,6 +38,7 @@ public class ActionPractice {
         //what if we use 'close' or 'quit' and then try to open browser again with below test
 //if we use 'quit' then in will be NoSuchSessionException,
 // will be 'driver==null' from 'Driver' util
+//but we created another method int 'Driver'->closeDriver()to open new session for below Test
     }
 
 
