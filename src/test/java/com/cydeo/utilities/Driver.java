@@ -67,11 +67,12 @@ public class Driver {
         return driver;//if not null then return with current 'driver'
     }
 
- //method to make sure our driver value always 'null' after using 'quite()' method
+ //method to make sure our driver value always 'null' after using 'quite()' method,
+ // basically restart browser after 'quit'
     public static void closeDriver(){
         if(driver!=null){
-            driver.quit();//this line will terminate existing session, value will not even be null
-        driver=null;
+        driver.quit();//this line will terminate existing session, value will not even be null
+        driver=null;//assign value back to null
         }
 
     }
