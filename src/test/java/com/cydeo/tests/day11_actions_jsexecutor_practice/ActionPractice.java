@@ -34,7 +34,7 @@ public class ActionPractice {
         actions.sendKeys(Keys.PAGE_UP,Keys.PAGE_UP).perform();//'page up' by one scroll
         actions.sendKeys(Keys.HOME).perform();//scroll to 'home' at once
 
-        Driver.getDriver().close();
+        Driver.getDriver().quit();
         //what if we use 'close' or 'quit' and then try to open browser again with below test
 //if we use 'quit' then in will be NoSuchSessionException,
 // will be 'driver==null' from 'Driver' util
@@ -46,6 +46,9 @@ public class ActionPractice {
     public void test2() {
 
         Driver.getDriver().get("https://practice.cydeo.com/");
+        Driver.closeDriver();
+        //call this method from 'Driver' to restart our browser after terminating browser
+        // by 'quit' of above Test
 
 
     }
