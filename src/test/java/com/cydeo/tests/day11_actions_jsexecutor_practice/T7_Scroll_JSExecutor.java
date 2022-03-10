@@ -38,17 +38,6 @@ public class T7_Scroll_JSExecutor {
         js.executeScript("arguments[1].scrollIntoView(true)", cydeoLinkBtn, homeLinkBtn);
 //arguments[1].scrollIntoView(true) is a method with indication objects to get cydeoLinkBtn or homeLinkBtn
 
-//((JavascriptExecutor) Driver.getDriver()).executeScript();//also this way to chain above
-
-// * a.  750 pixels down 10 times.
-        for (int i = 0; i < 10; i++) {
-            BrowserUtils.sleep(2);
-            js.executeScript("window.scrollBy(0,750)");//iterate scrolling 750 pxs 10 times
-        }
-
-
-
-        // * 5- Use below provided JS method only
 
     }
 }
