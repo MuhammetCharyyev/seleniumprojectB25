@@ -19,7 +19,7 @@ public class Driver {
 
     //make element WebDriver private  coz we want to close access from outside the class
     //make it static coz we'll use in a static method
-    private static WebDriver driver;
+    private static WebDriver driver;//value is null by default
 
     //create re-usable utility method which will return same driver instance when we'll call
     public static WebDriver getDriver() {
@@ -65,6 +65,15 @@ public class Driver {
             }
         }
         return driver;//if not null then return with current 'driver'
+    }
+
+ //method to make sure our driver value always 'null' after using 'quite()' method
+    public static void closeDriver(){
+        if(driver!=null){
+            driver.quit();//this line will terminate existing session, value will not even be null
+        driver=null;
+        }
+
     }
 
 }
