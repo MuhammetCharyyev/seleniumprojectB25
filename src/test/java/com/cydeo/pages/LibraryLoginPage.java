@@ -10,10 +10,11 @@ public class LibraryLoginPage {
     //1. initialize driver instance and object of the class
 
     public LibraryLoginPage(){
-        //initElement will create connection in between the current driver session(instance)
+        //initElement will create connection between the current driver session(instance)
         //and the object of current class
         PageFactory.initElements(Driver.getDriver(), this);
         // from PageFactory library// 'this' referring to this class itself
+        //expression in () is saying "take 'Driver.getDriver()' and place to 'this' class"
     }
 
     //2. use @FindBy annotation to locate web elements
