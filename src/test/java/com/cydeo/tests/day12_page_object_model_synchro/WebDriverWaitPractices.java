@@ -21,19 +21,28 @@ public class WebDriverWaitPractices {
         wait.until(ExpectedConditions.titleIs("Dynamic title"));
         //wait time until title of page will be "Dynamic title", give time to page to be loaded
 
+
         //create object to reach and assert webelements
         DynamicLoad7Page dynamicLoad7Page = new DynamicLoad7Page();
         //constructor from created DynamicLoad7Page
 
+        // * 3. Assert: Message “Done” is displayed.
         Assert.assertTrue(dynamicLoad7Page.doneMessage.isDisplayed());
         //check if the dedicated message is appeared
 
+        // * 4. Assert: Image is displayed.
+        // * Note: Follow POM
         Assert.assertTrue(dynamicLoad7Page.spongeBobImage.isDisplayed());
         //check if the image  is appeared
 
-        // * 3. Assert: Message “Done” is displayed.
-        // * 4. Assert: Image is displayed.
-        // * Note: Follow POM
+    }
+
+    @Test
+    public void dynamic_load_1_test() {
+        // Go to https://practice.cydeo.com/dynamic_loading/1
+        Driver.getDriver().get("https://practice.cydeo.com/dynamic_loading/1");
+
+
     }
 }
 /**
@@ -43,4 +52,17 @@ public class WebDriverWaitPractices {
  * 3. Assert: Message “Done” is displayed.
  * 4. Assert: Image is displayed.
  * Note: Follow POM
+ */
+
+/**
+ * TC#5 : Dynamically Loaded Page Elements 1
+ * 1. Go to https://practice.cydeo.com/dynamic_loading/1
+ * 2. Click to start
+ * 3. Wait until loading bar disappears
+ * 4. Assert username inputbox is displayed
+ * 5. Enter username: tomsmith
+ * 6. Enter password: incorrectpassword
+ * 7. Click to Submit button
+ * 8. Assert “Your password is invalid!” text is displayed.
+ * Note: Follow POM Design Pattern
  */
