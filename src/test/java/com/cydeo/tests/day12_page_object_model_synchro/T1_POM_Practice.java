@@ -35,6 +35,7 @@ public class T1_POM_Practice {
         //error method from 'LibraryLoginPage'
 
         Driver.closeDriver();//close current driver but not terminate whole test
+        //killing the object for current test but not for further tests
 
     }
 
