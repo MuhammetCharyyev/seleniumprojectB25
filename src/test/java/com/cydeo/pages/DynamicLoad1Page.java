@@ -27,10 +27,10 @@ public class DynamicLoad1Page {
     @FindBy(css = "#pwd")//locating 'password' field
     public WebElement inputPassword;
 
-    @FindBy (xpath = "//button[.='Sumbit']")//locate 'submit' button
+    @FindBy (xpath = "//button[.='Submit']")//locate 'submit' button
     public WebElement submitButton;
 
-    @FindBy(id = "flash")//locating 'error' message
-    public WebElement errorMessage;
+    @FindBy(id = "flash")
+    public WebElement errorMessage;//locating 'error' message
 
 }
