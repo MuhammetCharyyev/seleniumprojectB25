@@ -1,5 +1,6 @@
 package com.cydeo.tests.day12_page_object_model_synchro;
 
+import com.cydeo.pages.DynamicLoad1Page;
 import com.cydeo.pages.DynamicLoad7Page;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -42,6 +43,35 @@ public class WebDriverWaitPractices {
         // Go to https://practice.cydeo.com/dynamic_loading/1
         Driver.getDriver().get("https://practice.cydeo.com/dynamic_loading/1");
 
+        DynamicLoad1Page dynamicLoad1Page = new DynamicLoad1Page();
+        //creating constructor from 'DynamicLoad1Page'
+        // Wait until title is “Dynamic title”
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        //from Selenium, use 'wait' to create our expected condition
+
+
+// 2. Click to start
+        dynamicLoad1Page.startButton.click();//clicking ot start button
+
+//3. Wait until loading bar disappears
+        wait.until(ExpectedConditions.invisibilityOf(dynamicLoad1Page.loadingBar));
+        //wait time until title of page will display loading scale
+
+  //4. Assert username inputbox is displayed
+  Assert.assertTrue(dynamicLoad1Page.inputUsername.isDisplayed());
+
+        // * 5. Enter username: tomsmith
+        dynamicLoad1Page.inputUsername.sendKeys("tomsmith");
+
+        // * 6. Enter password: incorrectpassword
+        dynamicLoad1Page.inputPassword.sendKeys("somethingwrong");
+
+        //7. Click to Submit button
+        dynamicLoad1Page.submitButton.click();//clicking on submit
+
+//8. Assert “Your password is invalid!” text is displayed.
+// * Note: Follow POM Design Pattern
+        Assert.assertTrue(dynamicLoad1Page.errorMessage.isDisplayed());
 
     }
 }
