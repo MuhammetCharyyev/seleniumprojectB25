@@ -5,9 +5,13 @@ In this class only general utility methods that are not related to some specific
  */
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 public class BrowserUtils {
 
@@ -60,6 +64,18 @@ public class BrowserUtils {
 
         Assert.assertEquals(driver.getTitle(), expectedTitle);
 
+    }
+
+    /*
+    Creating utility for ExplicitWait to not repeat lines
+     */
+    public static void waitForInvisibility (WebElement webElement){
+        Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        //it does not necessary, in case of instability of page
+        WebDriverWait wait =new WebDriverWait(Driver.getDriver(), 10);
+        //object from WebDriverWait to identify our wait time
+        wait.until(ExpectedConditions.invisibilityOf(webElement));
+        //tell to driver wait 10 sec until the loading bar will be invisible
     }
 
 
