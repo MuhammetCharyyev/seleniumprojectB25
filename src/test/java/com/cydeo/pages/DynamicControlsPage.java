@@ -7,21 +7,26 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DynamicControlsPage {
 
-    public DynamicControlsPage(){
+    public DynamicControlsPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy (css = "form#checkbox-example>button")//way find by css, remove button
+    @FindBy(css = "form#checkbox-example>button")//way find by css, remove button
     public WebElement removeBtn;
 
-    @FindBy (css = "div#loading")
+    @FindBy(css = "div#loading")
     public WebElement loadingBar;//location of loading box
 
-    @FindBy (css = "input[type='checkbox']")
+    @FindBy(css = "input[type='checkbox']")
     public WebElement checkbox;//location of checkbox
 
-    @FindBy (css="p[id='message']")
+    @FindBy(css = "p[id='message']")
     public WebElement goneMess; //location of 'it's gone' message
 
+    @FindBy(xpath = "//button[.='Enable']")
+    public WebElement enableBtn; //location of 'enable' button
+
+    @FindBy (css= "input[type='text']")
+    public WebElement inputBox;
 
 }

@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 public class BrowserUtils {
 
@@ -70,7 +69,7 @@ public class BrowserUtils {
     Creating utility for ExplicitWait to not repeat lines
      */
     public static void waitForInvisibility (WebElement webElement){
-        Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+      //  Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         //it does not necessary, in case of instability of page
         WebDriverWait wait =new WebDriverWait(Driver.getDriver(), 10);
         //object from WebDriverWait to identify our wait time
