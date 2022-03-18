@@ -37,7 +37,7 @@ public class T3_CRM_Login extends TestBase {
         // 2- Go to https://login1.nextbasecrm.com/
         driver.get("https://login1.nextbasecrm.com/");
 
-        CRM_Utilities.srm_login(driver);//called from CRM_Utilities class we created for login
+        CRM_Utilities.crm_login(driver);//called from CRM_Utilities class we created for login
 
 //        6. Verify title is as expected:
 //        Expected: Portal
@@ -51,7 +51,7 @@ public class T3_CRM_Login extends TestBase {
         // 2- Go to https://login1.nextbasecrm.com/
         driver.get("https://login1.nextbasecrm.com/");
 
-        CRM_Utilities.srm_login(driver,
+        CRM_Utilities.crm_login(driver,
                 "helpdesk2@cybertekschool.com", "UserUser");
         //called from CRM_Utilities class we created for login
 //this is second option with indication username and password in arguments along with driver

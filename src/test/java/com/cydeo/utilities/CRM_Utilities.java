@@ -8,7 +8,7 @@ public class CRM_Utilities {
     /*
     this method will login with helpdesk@cybertekschool.com user when it's called
      */
-    public static void srm_login(WebDriver driver) {
+    public static void crm_login(WebDriver driver) {
 //USERNAME  PASSWORD
 //helpdesk1@cybertekschool.com  UserUser
         //3. Enter valid username
@@ -24,7 +24,7 @@ public class CRM_Utilities {
 
     }
 
-    public static void srm_login(WebDriver driver, String username, String password) {
+    public static void crm_login(WebDriver driver, String username, String password) {
 //USERNAME  PASSWORD
 //helpdesk1@cybertekschool.com  UserUser
         //3. Enter valid username
