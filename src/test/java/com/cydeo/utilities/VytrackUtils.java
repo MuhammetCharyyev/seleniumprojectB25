@@ -71,7 +71,7 @@ public class VytrackUtils {
      * For example: if tab is equals to Activities, and module equals to Calls,
      * Then method will navigate user to this page: http://qa2.vytrack.com/call/
      *
-     * @paramdriver
+     * @param //driver
      * @param tab
      * @param module
      */
