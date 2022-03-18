@@ -18,7 +18,8 @@ public class VyTrack_US_9 {
         VytrackUtils.loginAsDriver();
         //VytrackUtils.waitTillLoaderMaskDisappear();
 
-        WebElement activities = Driver.getDriver().findElement(By.xpath("(//li[@class='dropdown dropdown-level-1'])[3]"));
+        WebElement activities = Driver.getDriver().findElement
+                (By.xpath("(//li[@class='dropdown dropdown-level-1'])[3]"));
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
         wait.until(ExpectedConditions.visibilityOf(activities));
 
@@ -28,13 +29,16 @@ public class VyTrack_US_9 {
         VytrackUtils.waitTillLoaderMaskDisappear();
 
         Driver.getDriver().findElement(By.xpath("//a[@title='Create Calendar event']")).click();
-        Driver.getDriver().findElement(By.xpath("//input[starts-with(@id,'recurrence-repeat-view')]")).click();
+        Driver.getDriver().findElement
+                (By.xpath("//input[starts-with(@id,'recurrence-repeat-view')]")).click();
 
-        WebElement daysText=Driver.getDriver().findElement(By.xpath("//div[@data-name='recurrence-daily']//input[@type='text']"));
+        WebElement daysText=Driver.getDriver().findElement
+                (By.xpath("//div[@data-name='recurrence-daily']//input[@type='text']"));
         daysText.clear();
         daysText.sendKeys("-2");
 
-        WebElement warningText = Driver.getDriver().findElement(By.xpath("//span[.='The value have not to be less than 1.']"));
+        WebElement warningText = Driver.getDriver().findElement
+                (By.xpath("//span[.='The value have not to be less than 1.']"));
         String expected="The value have not to be less than 1.";
         String actual=warningText.getText();
         assertEquals(actual,expected);
